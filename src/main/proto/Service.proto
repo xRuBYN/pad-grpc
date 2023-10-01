@@ -1,0 +1,19 @@
+syntax= "proto3";
+option java_package = "com.example.grpc";
+package com.example.grpc;
+
+
+
+service Publisher {
+  rpc publishMessage(PublishRequest) returns (PublishResponse);
+}
+
+message PublishRequest {
+  string topic = 1;
+  string content = 2;
+}
+
+message PublishResponse {
+  bool isSuccess = 1;
+}
+

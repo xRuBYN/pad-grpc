@@ -1,0 +1,18 @@
+syntax= "proto3";
+option java_package = "com.example.grpc";
+package com.example.grpc;
+
+
+
+service Notifier {
+  rpc notify(NotifyRequest) returns (NotifyResponse);
+}
+
+message NotifyRequest {
+  string content = 1;
+}
+
+message NotifyResponse {
+  bool isSuccess = 1;
+}
+

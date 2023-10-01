@@ -1,0 +1,19 @@
+syntax= "proto3";
+option java_package = "com.example.grpc";
+package com.example.grpc;
+
+
+
+service Subscriber {
+  rpc subscribe(SubscribeRequest) returns (SubscribeResponse);
+}
+
+message SubscribeRequest {
+  string topic = 1;
+  string address = 2;
+}
+
+message SubscribeResponse {
+  bool isSuccess = 1;
+}
+
